@@ -2,7 +2,7 @@ function f = extract_features(data)
     s = size(data);
     num_channels = s(2);
     num_features = 2;
-    features = zeros(1, num_channels*num_features);
+    features = zeros(1, num_channels*num_features + 1);
     
     for channel = 1:num_channels
         feature_index = (channel-1)*num_features + 1;
