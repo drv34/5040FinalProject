@@ -15,7 +15,7 @@ for i = 219:818
     patient_1(i, :) = extract_features(patient_data);
     patient_1(i,96 * num_features + 1) = 0;
 end
-save('patient_1.mat', 'patient_1');
+save('features/patient_1.mat', 'patient_1');
 
 
 % patient 2
@@ -33,7 +33,7 @@ for i = 192:1091
     patient_2(i, :) = extract_features(patient_data);
     patient_2(i,56 * num_features + 1) = 0;
 end
-save('patient_2.mat', 'patient_2');
+save('features/patient_2.mat', 'patient_2');
 
 
 % patient 3
@@ -51,7 +51,7 @@ for i = 297:1196
     patient_3(i, :) = extract_features(patient_data);
     patient_3(i,16 * num_features + 1) = 0;
 end
-save('patient_3.mat', 'patient_3');
+save('features/patient_3.mat', 'patient_3');
 
 
 % patient 4
@@ -69,7 +69,7 @@ for i = 425:1624
     patient_4(i, :) = extract_features(patient_data);
     patient_4(i,88 * num_features + 1) = 0;
 end
-save('patient_4.mat', 'patient_4');
+save('features/patient_4.mat', 'patient_4');
 
 
 % patient 5
@@ -87,7 +87,7 @@ for i = 181:1980
     patient_5(i, :) = extract_features(patient_data);
     patient_5(i,47 * num_features + 1) = 0;
 end
-save('patient_5.mat', 'patient_5');
+save('features/patient_5.mat', 'patient_5');
 
 
 % patient 6
@@ -105,7 +105,7 @@ for i = 314:2413
     patient_6(i, :) = extract_features(patient_data);
     patient_6(i,88 * num_features + 1) = 0;
 end
-save('patient_6.mat', 'patient_6');
+save('features/patient_6.mat', 'patient_6');
 
 
 % patient 7
@@ -123,4 +123,4 @@ for i = 308:2707
     patient_7(i, :) = extract_features(patient_data);
     patient_7(i,96 * num_features + 1) = 0;
 end
-save('patient_7.mat', 'patient_7');
+save('features/patient_7.mat', 'patient_7');
