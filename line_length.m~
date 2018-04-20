@@ -1,0 +1,13 @@
+function f = line_length(data) 
+    s = size(data);
+    num_samples = s(1);
+    num_channels = s(2);
+    ll = zeros(1,num_channels);
+    for channel = 1:num_channels
+        for i = 2:num_samples
+            diff = abs(data(i,channel) - data(i-1, channel);
+            ll(channel) = ll(channel) + diff;
+        end
+    end
+    f = ll;
+end
