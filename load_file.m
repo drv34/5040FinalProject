@@ -1,4 +1,4 @@
-num_features = 2;
+num_features = 2; %change
 
 % patient 1
 num_columns = 96 * num_features + 1;
@@ -16,6 +16,7 @@ for i = 219:818
     patient_1(i, :) = extract_features(patient_data, num_columns);
     patient_1(i,num_columns) = 0;
 end
+save('features/patient_1.mat', 'patient_1');
 
 % patient 1 test
 num_columns = num_columns - 1;
@@ -26,7 +27,6 @@ for i = 1:931
     patient_1_test(i, :) = extract_features(patient_data, num_columns);
 end
 
-save('features/patient_1.mat', 'patient_1');
 save('features/patient_1_test.mat', 'patient_1_test');
 
 

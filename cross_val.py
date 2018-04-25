@@ -3,8 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io
 from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn import model_selection
 import os.path
+
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import accuracy_score
 
 
 for i in range (1,8):     
@@ -15,7 +20,18 @@ for i in range (1,8):
     X_train = data_array[:, :-1]
     Y_train = data_array[:, -1]
     
-    kfold = model_selection.KFold(n_splits=15, shuffle = True)
+    X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X_train, Y_train, test_size=0.2, random_state=7)
+    
+    # clf = SVC()
+    # clf.fit(X_train, Y_train)
+    # predictions = clf.predict(X_validation)
+    # print 'patient ' + str(i)
+    # print(accuracy_score(Y_validation, predictions))
+    # # print(confusion_matrix(Y_validation, predictions))
+    # # print(classification_report(Y_validation, predictions))
+    
+    kfold = model_selection.KFold(n_splits=25, shuffle = True)
     cv_results = model_selection.cross_val_score(SVC(), X_train, Y_train, cv=kfold, scoring='accuracy')
-    msg = "%f (%f)" % (cv_results.mean(), cv_results.std())
-    print(msg)
+    avg_score = sum(cv_results)/len(cv_results)
+    # msg = "%f (%f)" % (cv_results.mean(), cv_results.std())
+    print(avg_score)

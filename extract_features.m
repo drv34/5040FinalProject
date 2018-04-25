@@ -1,7 +1,7 @@
 function f = extract_features(data, num_columns)
     s = size(data);
     num_channels = s(2);
-    num_features = 2;
+    num_features = 2; %change
     features = zeros(1, num_columns);
     
     for channel = 1:num_channels
